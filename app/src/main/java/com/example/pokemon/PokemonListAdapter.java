@@ -12,9 +12,6 @@ import android.widget.TextView;
 import com.example.pokemon.models.Pokemon;
 import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
