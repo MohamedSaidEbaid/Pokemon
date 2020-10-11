@@ -1,6 +1,8 @@
 package com.example.pokemon;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.pokemon.models.Pokemon;
+import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
@@ -19,8 +25,9 @@ public class PokemonListAdapter extends  RecyclerView.Adapter<PokemonListAdapter
     private ArrayList<Pokemon> dataset;
     private Context context;
 
-    public PokemonListAdapter(MainActivity mainActivity){
+    public PokemonListAdapter(Context context){
         dataset = new ArrayList<>();
+        this.context = context;
     }
 
     @NonNull
@@ -35,7 +42,7 @@ public class PokemonListAdapter extends  RecyclerView.Adapter<PokemonListAdapter
         Pokemon p = dataset.get(position);
         holder.nameTextView.setText(p.getName());
 
-//        Glide.with(context).load("https://pokeapi.co/media/sprites/pokemon/"+p.getNumber()+".png").centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.photoImageView);
+        Picasso.with(context).load("https://www.pngonly.com/wp-content/uploads/2017/06/hd-pokemon-png-10203.png").into(holder.photoImageView);
     }
 
     @Override
